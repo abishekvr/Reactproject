@@ -17,6 +17,10 @@ spec:
       containers:
       - name: backend
         image: 059449770494.dkr.ecr.eu-west-2.amazonaws.com/pytest20:backend.latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
           name: http-server
+        resources: {}
+      restartPolicy: Always
+status: {}

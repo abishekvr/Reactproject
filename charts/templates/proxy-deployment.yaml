@@ -17,6 +17,10 @@ spec:
       containers:
       - name: proxy
         image: 059449770494.dkr.ecr.eu-west-2.amazonaws.com/pytest20:proxy.latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
           name: http-server
+        resources: {}
+      restartPolicy: Always
+status: {}

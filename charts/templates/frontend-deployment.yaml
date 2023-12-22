@@ -14,9 +14,13 @@ spec:
       labels:
         app: react-app
     spec:
-      containers:
+       containers:
       - name: frontend
         image: 059449770494.dkr.ecr.eu-west-2.amazonaws.com/pytest20:frontend.latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
           name: http-server
+        resources: {}
+      restartPolicy: Always
+status: {}
