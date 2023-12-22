@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app: react-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: react-app
+  template:
+    metadata:
+      labels:
+        app: react-app
+    spec:
+      containers:
+      - name: frontend
+        image: 059449770494.dkr.ecr.eu-west-2.amazonaws.com/pytest20:frontend.latest
+        ports:
+        - containerPort: 3000
+          name: http-server
