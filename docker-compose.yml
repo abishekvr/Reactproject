@@ -1,0 +1,24 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    ports:
+      - "5000:5000"
+
+  proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - frontend
+    ports:
+      - "80:80"
+
+  frontend:
+    build:
+      context: sys-stats
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
