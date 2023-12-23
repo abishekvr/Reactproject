@@ -1,1 +1,25 @@
+Chart for docker-compose under charts.
 
+Deployment and service files for backend, frontend and proxy is created. 
+
+We have 2 copies of Docker images saved in ECR and Dockerhub. 
+
+Images from Dockerhub 
+Backend: abishekvr/drtest:pybackend.latest
+Frontend: abishekvr/drtest:pyfrontend.latest
+Proxy: abishekvr/drtest:pyproxy.latest
+
+Images from ECR
+Backend: 059449770494.dkr.ecr.eu-west-2.amazonaws.com/pytest20:backend.latest
+Frontend: 059449770494.dkr.ecr.eu-west-2.amazonaws.com/pytest20:frontend.latest
+Proxy:  059449770494.dkr.ecr.eu-west-2.amazonaws.com/pytest20:proxy.latest
+
+Chart are Installed through Helm, commands to execute Helm as follows, 
+
+helm install pytest ./charts --namespace default        #charts installed under the name pytest on default namespaces  	
+
+Access the frontend application 
+From aws external IP: a889c8fac90934bd78e424b81b6f40ec-1254186101.eu-west-2.elb.amazonaws.com
+From Minukube: localhost:8082
+
+Access Cheked. 
